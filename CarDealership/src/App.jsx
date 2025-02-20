@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
+import CarList from "./components/CarList";
+import FilterBar from "./components/FilterBar";
 
 function App() {
   const [cars, setCars] = useState(() => {
@@ -8,7 +10,7 @@ function App() {
     return savedCars ? JSON.parse(savedCars) : [];
   });
 
-  const [filteredCars, setFilteredCars] = useState("");
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     localStorage.setItem("cars", JSON.stringify(cars));
@@ -18,6 +20,8 @@ function App() {
     <div className="container">
       <h1>Car DealerShip</h1>
       <Form cars={cars} setCars={setCars} />
+      <FilterBar filter={filter} setFilter={setFilter} />
+      <CarList cars={cars} sort />
     </div>
   );
 }
