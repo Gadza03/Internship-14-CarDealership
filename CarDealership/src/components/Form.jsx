@@ -34,9 +34,12 @@ export default function Form({ cars, setCars }) {
       return;
     }
 
-    const newCar = { ...car, id: setId(id + 1) };
+    const newId = id + 1;
+    const newCar = { ...car, id: newId };
     addCar(newCar);
+
     setCar({ brand: "", model: "", type: "", year: "", registration: "" });
+    setId(newId);
   };
 
   const valideteInputs = () => {
