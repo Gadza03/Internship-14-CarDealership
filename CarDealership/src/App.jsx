@@ -22,7 +22,7 @@ function App() {
       <Form cars={cars} setCars={setCars} />
       <p className="search-description">Search cars by brand and model:</p>
       <FilterBar filter={filter} setFilter={setFilter} />
-      <CarList cars={cars} filter={filter} />
+      <CarList cars={cars} filter={filter} setCars={setCars} />
     </div>
   );
 }

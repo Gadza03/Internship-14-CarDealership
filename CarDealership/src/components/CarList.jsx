@@ -1,6 +1,6 @@
 import CarCard from "./CarCard";
 import "../styles/carOutput.css";
-export default function CarList({ cars, filter }) {
+export default function CarList({ cars, filter, setCars }) {
   const sortedCars = cars.sort((a, b) => {
     if (a.year !== b.year) return b.year - a.year;
     if (a.brand !== b.brand) return a.brand.localeCompare(b.brand);
@@ -11,11 +11,12 @@ export default function CarList({ cars, filter }) {
     `${car.brand} ${car.model}`.toLowerCase().includes(filter.toLowerCase())
   );
 
-  console.log(filteredCars.length);
   return (
     <div className="card-list">
       {filteredCars.length > 0
-        ? filteredCars.map((car) => <CarCard key={car.id} car={car} />)
+        ? filteredCars.map((car) => (
+            <CarCard key={car.id} car={car} cars={cars} setCars={setCars} />
+          ))
         : "No cars in this saloon!"}
     </div>
   );
