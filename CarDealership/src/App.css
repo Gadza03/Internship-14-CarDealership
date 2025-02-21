@@ -17,3 +17,7 @@ h1 {
   margin: 0 auto;
   padding-inline: 3rem;
 }
+
+.search-description {
+  margin-bottom: 10px;
+}

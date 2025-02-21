@@ -1,9 +1,10 @@
 export default function FilterBar({ filter, setFilter }) {
   return (
     <input
+      className="filter-bar"
       type="text"
       value={filter}
-      placeholder="Filer by brand or model"
+      placeholder="Search Bar"
       onChange={(e) => setFilter(e.target.value)}
     />
   );

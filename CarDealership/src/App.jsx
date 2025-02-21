@@ -9,7 +9,6 @@ function App() {
     const savedCars = localStorage.getItem("cars");
     return savedCars ? JSON.parse(savedCars) : [];
   });
-  console.log(cars);
 
   const [filter, setFilter] = useState("");
 
@@ -21,6 +20,7 @@ function App() {
     <div className="container">
       <h1>Car DealerShip</h1>
       <Form cars={cars} setCars={setCars} />
+      <p className="search-description">Search cars by brand and model:</p>
       <FilterBar filter={filter} setFilter={setFilter} />
       <CarList cars={cars} filter={filter} />
     </div>

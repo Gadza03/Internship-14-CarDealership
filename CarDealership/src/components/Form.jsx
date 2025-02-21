@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import InputField from "./InputField";
 import "../styles/form.css";
+import { v4 as uuid } from "uuid";
 
 export default function Form({ cars, setCars }) {
   const [id, setId] = useState(0);
@@ -34,12 +35,9 @@ export default function Form({ cars, setCars }) {
       return;
     }
 
-    const newId = id + 1;
-    const newCar = { ...car, id: newId };
+    const newCar = { ...car, id: uuid() };
     addCar(newCar);
-
     setCar({ brand: "", model: "", type: "", year: "", registration: "" });
-    setId(newId);
   };
 
   const valideteInputs = () => {

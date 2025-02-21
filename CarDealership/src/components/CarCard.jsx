@@ -8,7 +8,7 @@ export default function CarCard({ car }) {
 
     return expiryDate <= todaysDate;
   };
-  const handleRemove = () => {};
+  const handleRemove = (id) => {};
 
   console.log(car.registration);
   return (
@@ -21,7 +21,7 @@ export default function CarCard({ car }) {
       <p>Type: {car.type}</p>
       <p>Year: {car.year}</p>
       <p>Registraion expires: {car.registration}</p>
-      <button onClick={() => removeCar(car.id)} id="remove-btn">
+      <button onClick={() => handleRemove(car.id)} id="remove-btn">
         Delete
       </button>
     </div>
