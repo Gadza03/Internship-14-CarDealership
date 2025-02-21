@@ -1,5 +1,5 @@
 import "../styles/carOutput.css";
-export default function CarCard({ car, cars, setCars }) {
+export default function CarCard({ car, setCars }) {
   const isExpiring = (date) => {
     const expiryDate = new Date(date);
     const todaysDate = new Date();
@@ -8,13 +8,14 @@ export default function CarCard({ car, cars, setCars }) {
 
     return expiryDate <= todaysDate;
   };
+
   const handleRemove = (id) => {
     setCars((prevCars) => prevCars.filter((c) => c.id !== id));
   };
 
   return (
     <div
-      className={`car-card ${isExpiring(car.registraion) ? "expiring" : ""}`}
+      className={`car-card ${isExpiring(car.registration) ? "expiring" : ""}`}
     >
       <h3>
         {car.brand} {car.model}
