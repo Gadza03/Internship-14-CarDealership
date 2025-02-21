@@ -1,7 +1,8 @@
 .card-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
+  gap: 30px;
   margin-top: 10px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -19,8 +20,12 @@
 }
 
 .car-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
   display: flex;
-  justify-content: space-around;
+  gap: 4px;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -29,6 +34,7 @@
 }
 
 #remove-btn {
+  margin-top: 10px;
   border: 2px solid red;
   background-color: rgb(235, 132, 132);
   padding: 8px 24px;
