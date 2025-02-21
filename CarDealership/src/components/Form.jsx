@@ -80,9 +80,13 @@ export default function Form({ cars, setCars }) {
       />
       <select name="type" value={car.type} onChange={handleChange}>
         <option value="">Select type</option>
-        <option value="sedan">Sedan</option>
-        <option value="suv">SUV</option>
-        <option value="van">Van</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Suv">SUV</option>
+        <option value="Van">Van</option>
+        <option value="Truck">Truck</option>
+        <option value="Hatchback">Hatchback</option>
+        <option value="Electric">Electric</option>
+        <option value="Coupe">Coupe</option>
       </select>
       <InputField
         type="number"
