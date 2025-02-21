@@ -5,7 +5,6 @@ import "../styles/form.css";
 import { v4 as uuid } from "uuid";
 
 export default function Form({ cars, setCars }) {
-  const [id, setId] = useState(0);
   const [car, setCar] = useState({
     brand: "",
     model: "",
@@ -20,10 +19,11 @@ export default function Form({ cars, setCars }) {
 
   const addCar = (newCar) => {
     if (cars.length >= 10) {
-      alert("Maximum number of cars reached!");
-      return;
+      toast.error("Maximum number of cars reached!");
+      return false;
     }
     setCars([...cars, newCar]);
+    return true;
   };
 
   const handleSubmit = (e) => {
@@ -36,7 +36,10 @@ export default function Form({ cars, setCars }) {
     }
 
     const newCar = { ...car, id: uuid() };
-    addCar(newCar);
+    if (addCar(newCar)) {
+      toast.success("Succesfuly added car.");
+    }
+
     setCar({ brand: "", model: "", type: "", year: "", registration: "" });
   };
 

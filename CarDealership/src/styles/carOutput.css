@@ -29,6 +29,11 @@
   align-items: center;
 }
 
+.car-photo {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
 .expiring {
   border: 2px solid red;
 }
@@ -45,4 +50,11 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
 }
